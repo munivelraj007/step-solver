@@ -1,0 +1,465 @@
+/* ==========================================
+   STEP SOLVER - COMPACT DARK UI
+========================================== */
+
+#step-solver-box {
+    position: fixed;
+
+    top: 76px;
+    right: 24px;
+
+    width: 318px;
+
+    background: #0b1220;
+    color: #ffffff;
+
+    border: 1px solid #263653;
+    border-radius: 16px;
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.45),
+        0 6px 18px rgba(0, 0, 0, 0.25);
+
+    z-index: 2147483647;
+
+    font-family:
+        Inter,
+        Arial,
+        sans-serif;
+
+    overflow: hidden;
+
+    user-select: none;
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+#step-solver-header {
+    height: 50px;
+
+    padding: 0 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #101a2d;
+
+    border-bottom: 1px solid #263653;
+
+    cursor: move;
+}
+
+
+#solver-title {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    letter-spacing: -0.2px;
+}
+
+
+.solver-logo {
+    font-size: 18px;
+}
+
+
+#solver-controls {
+    display: flex;
+    align-items: center;
+
+    gap: 3px;
+}
+
+
+#solver-controls button {
+    width: 29px;
+    height: 29px;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 7px;
+
+    background: transparent;
+
+    color: #9aa9be;
+
+    font-size: 20px;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+
+#solver-controls button:hover {
+    background: #24314a;
+    color: #ffffff;
+}
+
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+#step-solver-content {
+    padding: 12px;
+}
+
+
+/* ==========================================
+   STATUS ROW
+========================================== */
+
+#solver-status-row {
+    min-height: 38px;
+
+    margin-bottom: 10px;
+
+    padding: 0 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #08101e;
+
+    border: 1px solid #192942;
+    border-radius: 9px;
+}
+
+
+#solver-status {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    color: #aebbd0;
+
+    font-size: 12px;
+}
+
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #20c878;
+
+    box-shadow:
+        0 0 9px rgba(32, 200, 120, 0.7);
+}
+
+
+#solver-mode {
+    padding: 5px 8px;
+
+    border-radius: 6px;
+
+    background: #1a2340;
+
+    color: #aebbd0;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* ==========================================
+   SOLVE CURRENT BUTTON
+========================================== */
+
+#solve-current {
+    width: 100%;
+
+    height: 46px;
+
+    padding: 0 10px;
+
+    display: flex;
+    align-items: center;
+
+    border: none;
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #5b58ed,
+            #5864f2
+        );
+
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 16px rgba(88, 92, 235, 0.25);
+
+    transition:
+        transform 0.1s ease,
+        filter 0.15s ease,
+        opacity 0.15s ease;
+}
+
+
+#solve-current:hover {
+    filter: brightness(1.08);
+}
+
+
+#solve-current:active {
+    transform: scale(0.985);
+}
+
+
+#solve-current:disabled {
+    opacity: 0.65;
+    cursor: wait;
+}
+
+
+.solve-icon {
+    margin-right: 8px;
+
+    font-size: 15px;
+}
+
+
+.solve-label {
+    white-space: nowrap;
+}
+
+
+.shortcut {
+    margin-left: auto;
+
+    padding: 4px 7px;
+
+    border-radius: 6px;
+
+    background: rgba(255, 255, 255, 0.13);
+
+    color: #e0e2ff;
+
+    font-size: 9px;
+    font-weight: 600;
+}
+
+
+/* ==========================================
+   AUTO SOLVE
+========================================== */
+
+#auto-solve-row {
+    min-height: 58px;
+
+    margin-top: 10px;
+
+    padding: 0 11px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #111b2d;
+
+    border: 1px solid #2a3a56;
+    border-radius: 9px;
+}
+
+
+.auto-text {
+    min-width: 0;
+}
+
+
+.auto-title {
+    color: #ffffff;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+.auto-subtitle {
+    margin-top: 4px;
+
+    color: #718198;
+
+    font-size: 10px;
+}
+
+
+/* ==========================================
+   TOGGLE
+========================================== */
+
+.switch {
+    position: relative;
+
+    width: 40px;
+    height: 23px;
+
+    flex-shrink: 0;
+
+    margin-left: 12px;
+}
+
+
+.switch input {
+    position: absolute;
+
+    opacity: 0;
+
+    width: 0;
+    height: 0;
+}
+
+
+.slider {
+    position: absolute;
+
+    inset: 0;
+
+    background: #2a3953;
+
+    border-radius: 999px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease;
+}
+
+
+.slider::before {
+    content: "";
+
+    position: absolute;
+
+    width: 17px;
+    height: 17px;
+
+    left: 3px;
+    top: 3px;
+
+    background: #ffffff;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 1px 4px rgba(0, 0, 0, 0.3);
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+.switch input:checked + .slider {
+    background: #625ff1;
+}
+
+
+.switch input:checked + .slider::before {
+    transform: translateX(17px);
+}
+
+
+/* ==========================================
+   RESULT
+========================================== */
+
+#solver-result {
+    margin-top: 10px;
+
+    padding: 11px;
+
+    background: #080f1d;
+
+    border: 1px solid #2a3a56;
+    border-radius: 9px;
+}
+
+
+.result-title {
+    margin-bottom: 7px;
+
+    color: #8898ae;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 0.7px;
+}
+
+
+#answer-text {
+    min-height: 38px;
+
+    max-height: 180px;
+
+    overflow-y: auto;
+
+    color: #dce5f3;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    white-space: pre-wrap;
+
+    word-break: break-word;
+}
+
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+#answer-text::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+#answer-text::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+#answer-text::-webkit-scrollbar-thumb {
+    background: #33435f;
+
+    border-radius: 10px;
+}
+
+
+/* ==========================================
+   PREVENT WEBSITE STYLES FROM BREAKING UI
+========================================== */
+
+#step-solver-box *,
+#step-solver-box *::before,
+#step-solver-box *::after {
+    box-sizing: border-box;
+}

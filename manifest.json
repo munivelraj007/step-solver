@@ -1,0 +1,54 @@
+{
+  "manifest_version": 3,
+
+  "name": "Step Solver",
+  "version": "1.0.0",
+
+  "description": "AI-powered MCQ Step Solver",
+
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage",
+    "scripting"
+  ],
+
+  "host_permissions": [
+    "<all_urls>",
+    "https://generativelanguage.googleapis.com/*"
+  ],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "action": {
+    "default_title": "Step Solver",
+    "default_popup": "popup.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "commands": {
+    "solve-current": {
+      "suggested_key": {
+        "default": "Alt+S"
+      },
+      "description": "Solve current question"
+    }
+  }
+}
